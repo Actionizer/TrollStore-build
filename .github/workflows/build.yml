@@ -26,7 +26,12 @@ jobs:
           altlist: true
           altlist-src: 'opa334/AltList'
           altlist-branch: 'main'
-
+          
+      - name: Install dependencies
+        run: |
+          brew update
+          brew install libarchive
+          
       - name: Build
         run: |
           cd ${{ github.workspace }}
