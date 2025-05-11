@@ -1,0 +1,13 @@
+name: Build and upload Artifact
+on:
+  workflow_dispatch:
+  # push:
+
+jobs: 
+  build:
+    name: Build
+    runs-on: macos-latest
+
+    steps:
+
+      - uses: actions/checkout@v4
