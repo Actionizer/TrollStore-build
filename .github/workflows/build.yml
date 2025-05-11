@@ -11,3 +11,21 @@ jobs:
     steps:
 
       - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - uses: waruhachi/theos-action@v2.4.6
+        with:
+          theos-src: 'theos/theos'
+          theos-branch: 'master'
+          sdks-src: 'theos/sdks'
+          sdks-branch: 'master'
+          libgcuniversal: true
+          libgcuniversal-src: 'MrGcGamer/LibGcUniversalDocumentation'
+          libgcuniversal-branch: 'master'
+          altlist: true
+          altlist-src: 'opa334/AltList'
+          altlist-branch: 'main'
+
+      - name: Build
+        run: |
