@@ -30,6 +30,6 @@ jobs:
       - name: Build
         run: |
           cd ${{ github.workspace }}
-          make all
+          make -n all
           echo "Folder struct:"
           ls
