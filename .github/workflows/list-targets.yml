@@ -1,0 +1,17 @@
+name: List targets
+on:
+  workflow_dispatch:
+
+jobs:
+  list:
+    name: Main
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: list targets
+        run: | 
+          make -pRrq -f Makefile : 2>/dev/null | awk -F: '/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ {print $1}' | sort | uniq
